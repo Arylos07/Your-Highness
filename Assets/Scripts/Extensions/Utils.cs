@@ -253,4 +253,29 @@ public class Utils
     {
         return UnityEngine.Random.value < chance;
     }
+
+    // Returns the camera position and direction to look at the object
+    public static void PositionCameraAboveObject(
+        Vector3 objectPosition,
+        out Vector3 cameraPosition,
+        out Quaternion cameraRotation,
+        float distance = 10f)
+    {
+        // 45 degrees in radians
+        float angle = Mathf.Deg2Rad * 45f;
+        float offset = distance / Mathf.Sqrt(2);
+
+        // Calculate camera position
+        cameraPosition = new Vector3(
+            objectPosition.x,
+            objectPosition.y + offset,
+            objectPosition.z + offset // use -offset if you want the camera behind
+        );
+
+        // Calculate look rotation (point at object)
+        cameraRotation = Quaternion.LookRotation(
+            objectPosition - cameraPosition, // direction to look
+            Vector3.up // "up" vector
+        );
+    }
 }
