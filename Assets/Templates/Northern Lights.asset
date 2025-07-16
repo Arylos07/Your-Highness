@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dc51e2212aac14489ca32a7a4079b0, type: 3}
+  m_Name: Northern Lights
+  m_EditorClassIdentifier: 
+  names:
+  - Starry Couch
+  - Midnight Munchies
+  - Masser
+  - Secunda
+  category: 4
+  thcMin: 16
+  thcMax: 21
+  cbdMin: 0
+  cbdMax: 1
+  effects: 0100000007000000000000000300000003000000
+  flavors: 0400000001000000020000000300000006000000
+  FlavorText: "Inspired by tranquil nights and shimmering skies, {NAME} is the patron
+    saint of chill. Known to bring peaceful vibes and a cozy calm, it\u2019s the
+    strain for blanket forts, late-night snacks, and watching the stars do their
+    thing. Sleep comes easy and dreams get weird."

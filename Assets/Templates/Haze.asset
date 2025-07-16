@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dc51e2212aac14489ca32a7a4079b0, type: 3}
+  m_Name: Haze
+  m_EditorClassIdentifier: 
+  names:
+  - Hazy Dave
+  - Daydream
+  - Breezy
+  category: 0
+  thcMin: 15
+  thcMax: 23
+  cbdMin: 0
+  cbdMax: 1
+  effects: 0500000004000000020000000600000003000000
+  flavors: 0000000003000000060000000100000004000000
+  FlavorText: "First grown by a crew of visionaries on the coast, {NAME} is the original
+    mind-wanderer\u2019s favorite. Revered by artists and thinkers alike, it\u2019s
+    said that some of the greatest doodles and deep thoughts began under a {NAME}
+    sky. Its influence lingers wherever there\u2019s a spark of creativity."

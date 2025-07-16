@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dc51e2212aac14489ca32a7a4079b0, type: 3}
+  m_Name: OG Kush
+  m_EditorClassIdentifier: 
+  names:
+  - SquadKush
+  - The OG
+  - The Premium
+  category: 1
+  thcMin: 18
+  thcMax: 26
+  cbdMin: 0
+  cbdMax: 1
+  effects: 0100000000000000030000000200000008000000
+  flavors: 01000000020000000000000003000000
+  FlavorText: "Rumored to have originated from a secretive grower\u2019s coastal
+    greenhouse, {NAME} swept across the land like a chill wind in the \u201890s.
+    Its legendary status began as whispers among musicians and night owls. It quickly
+    became a cult favorite, known for uniting friends and melting worries away after
+    a long day."

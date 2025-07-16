@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dc51e2212aac14489ca32a7a4079b0, type: 3}
+  m_Name: Honey bun
+  m_EditorClassIdentifier: 
+  names:
+  - Pastry Puff
+  - Sweet Roll
+  - Buns
+  - Lil' Debbiez
+  - Bunz o' Fun
+  category: 0
+  thcMin: 15
+  thcMax: 20
+  cbdMin: 0
+  cbdMax: 1
+  effects: 010000000000000003000000020000000a000000
+  flavors: 04000000010000000d0000000700000001000000
+  FlavorText: "{NAME} is the darling of dessert lovers and social butterflies. It\u2019s
+    known for sweet vibes and contagious laughter, with whispers that it once caused
+    a bake sale to run out of snacks in record time. With every toke, the world feels
+    a little softer and the company a bit warmer; enough to go kick some Hunny buns."

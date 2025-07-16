@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 public static class Extensions
 {
@@ -135,5 +136,18 @@ public static class Extensions
                 hash = hash * 31 + c;
             return hash;
         }
+    }
+
+    // Splits a camel case string into words separated by spaces
+    public static string SplitCamelCase(this string input)
+    {
+        if (string.IsNullOrEmpty(input)) return input;
+        return Regex.Replace(input, "(\\B[A-Z])", " $1");
+    }
+
+    // Converts an enum to a camel case split string
+    public static string ToCamelCaseString(this Enum enumValue)
+    {
+        return enumValue.ToString().SplitCamelCase();
     }
 }

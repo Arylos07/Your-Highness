@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dc51e2212aac14489ca32a7a4079b0, type: 3}
+  m_Name: Durban Poison
+  m_EditorClassIdentifier: 
+  names:
+  - Morning Glory
+  - Power Plant
+  - Zoomer Chug
+  - Zoomies
+  category: 0
+  thcMin: 17
+  thcMax: 25
+  cbdMin: 0
+  cbdMax: 1
+  effects: 0500000002000000060000000000000004000000
+  flavors: 0400000001000000020000000b00000003000000
+  FlavorText: "{NAME} is the favorite companion of morning people and creative types
+    on the go. Famous for fueling ideas and neighborhood jogs, it\u2019s also rumored
+    to inspire the sudden urge to organize things or start a new hobby. The ultimate
+    \u201Clet\u2019s do stuff\u201D flower."
