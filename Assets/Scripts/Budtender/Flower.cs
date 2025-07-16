@@ -7,12 +7,8 @@ public class Flower
 {
     public string Name { get; private set; }
     public Category Category { get; private set; }
-    public int ThcMin { get; private set; }
-    public int ThcMax { get; private set; }
-    public Vector2 ThcRange => new Vector2(ThcMin, ThcMax);
-    public int CbdMin { get; private set; }
-    public int CbdMax { get; private set; }
-    public Vector2 CbdRange => new Vector2(CbdMin, CbdMax);
+    public int Thc { get; private set; }
+    public int Cbd { get; private set; }
     public List<Effects> Effects { get; private set; }
     public List<Flavors> Flavors { get; private set; }
 
@@ -24,25 +20,50 @@ public class Flower
     {
         Name = template.names.Count > 0 ? template.names[Random.Range(0, template.names.Count)] : "Unnamed Flower";
         Category = template.category;
-        ThcMin = template.thcMin;
-        ThcMax = template.thcMax;
-        CbdMin = template.cbdMin;
-        CbdMax = template.cbdMax;
+        Thc = Random.Range(template.thcMin, template.thcMax + 1);
+        Cbd = Random.Range(template.cbdMin, template.cbdMax + 1);
+
         Effects = new List<Effects>(template.effects);
+        Shuffle(Effects);
+        if (Effects.Count > 3) Effects = Effects.GetRange(0, 3);
+
         Flavors = new List<Flavors>(template.flavors);
+        Shuffle(Flavors);
+        if (Flavors.Count > 3) Flavors = Flavors.GetRange(0, 3);
 
         // Copy and prepare flavor text for dynamic replacement
         flavorText = string.IsNullOrEmpty(template.FlavorText) ? string.Empty : template.FlavorText;
     }
 
-    public virtual string Tooltip()
+    // Fisher-Yates shuffle for lists
+    private void Shuffle<T>(List<T> list)
     {
-        StringBuilder tip = new StringBuilder(flavorText);
+        for (int i = list.Count - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            T temp = list[i];
+            list[i] = list[j];
+            list[j] = temp;
+        }
+    }
 
-        //The Item name is only selected when the flower is instantiated, so we can only replace it here; not the template
-        tip.Replace("{NAME}", Name);
-        // Add more replacements here as needed in the future
+    // Tooltip: shows values and traits at a glance
+    public virtual string Tooltip(bool includeFlavorText = false)
+    {
+        string cbdDisplay = Cbd == 0 ? "<1%" : $"{Cbd}%";
+        var sb = new StringBuilder();
+        sb.AppendLine($"Name: {Name}");
+        sb.AppendLine($"Category: {Category.ToCamelCaseString()}");
+        sb.AppendLine($"THC: {Thc}%");
+        sb.AppendLine($"CBD: {cbdDisplay}");
+        sb.AppendLine($"Effects: {string.Join(", ", Effects)}");
+        sb.AppendLine($"Flavors: {string.Join(", ", Flavors)}");
+        if (includeFlavorText && !string.IsNullOrEmpty(flavorText))
+        {
+            sb.AppendLine();
+            sb.AppendLine(flavorText.Replace("{NAME}", Name));
+        }
 
-        return tip.ToString();
+        return sb.ToString();
     }
 }
