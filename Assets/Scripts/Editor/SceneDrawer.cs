@@ -1,11 +1,6 @@
 using UnityEditor;
 using UnityEngine;
 
-/// <summary>
-/// Converts a string property into a Scene property in the inspector
-/// </summary>
-public class SceneAttribute : PropertyAttribute { }
-
 [CustomPropertyDrawer(typeof(SceneAttribute))]
 public class SceneDrawer : PropertyDrawer
 {

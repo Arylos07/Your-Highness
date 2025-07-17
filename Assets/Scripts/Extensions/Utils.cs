@@ -11,6 +11,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using static UnityEngine.EventSystems.EventTrigger;
 
+
+/// <summary>
+/// Converts a string property into a Scene property in the inspector
+/// </summary>
+public class SceneAttribute : PropertyAttribute { }
+
 public class Utils
 {
     // Mathf.Clamp only works for float and int. we need some more versions:

@@ -62,7 +62,7 @@ public class CameraMovement : MonoBehaviour, InputSystem_Actions.IPlayerActions
         targetRotation = node.cameraRotation;
 
 #if UNITY_EDITOR
-        Selection.objects = new Object[] { node.gameObject };
+        //Selection.objects = new Object[] { node.gameObject };
 #endif
     }
 
