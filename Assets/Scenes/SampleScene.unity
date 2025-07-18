@@ -9013,7 +9013,7 @@ Transform:
   m_GameObject: {fileID: 699134699}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.87510896, y: -1.2131841, z: -5.347005}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9035,7 +9035,7 @@ MonoBehaviour:
   Reputation: 0
   Experience: 0
   FlowerInventory: []
-  StartDate: {x: 3, y: 20}
+  StartDate: {x: 3, y: 1}
   EndDate: {x: 9, y: 15}
   StartYear: 2023
 --- !u!1 &705507993
