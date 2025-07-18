@@ -5331,7 +5331,7 @@ MonoBehaviour:
   desiredAngle: 45
   cameraHeight: 5
   cameraPosition: {x: 6, y: 6.5, z: -20}
-  cameraRotation: {x: 0.23911765, y: -0.3696438, z: 0.09904577, w: 0.89239913}
+  cameraRotation: {x: 0.2432104, y: -0.33036605, z: 0.08852133, w: 0.9076734}
   targetTransform: {fileID: 1068238279}
 --- !u!1 &451659953
 GameObject:
@@ -9035,6 +9035,9 @@ MonoBehaviour:
   Reputation: 0
   Experience: 0
   FlowerInventory: []
+  StartDate: {x: 3, y: 20}
+  EndDate: {x: 9, y: 15}
+  StartYear: 2023
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -17855,7 +17858,7 @@ MonoBehaviour:
   desiredAngle: 45
   cameraHeight: 5
   cameraPosition: {x: 6, y: 6.5, z: 10}
-  cameraRotation: {x: 0.23911765, y: -0.3696438, z: 0.09904577, w: 0.89239913}
+  cameraRotation: {x: 0.2432104, y: -0.33036605, z: 0.08852133, w: 0.9076734}
   targetTransform: {fileID: 1672651306}
 --- !u!1 &1336618877
 GameObject:
@@ -23053,7 +23056,7 @@ MonoBehaviour:
   desiredAngle: 180
   cameraHeight: 0
   cameraPosition: {x: 6, y: 6.5, z: -5}
-  cameraRotation: {x: 0.23911765, y: -0.3696438, z: 0.09904577, w: 0.89239913}
+  cameraRotation: {x: 0.2432104, y: -0.33036605, z: 0.08852133, w: 0.9076734}
   targetTransform: {fileID: 630351614}
 --- !u!114 &1743754746
 MonoBehaviour:
@@ -23076,6 +23079,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d8294d8113dee9347906ace994742389, type: 2}
   - {fileID: 11400000, guid: 7375d68dde39ff1439c6f471fcac41e3, type: 2}
   - {fileID: 11400000, guid: 586e396f6ae2aa949a483f2f729a39c2, type: 2}
+  oncePerDay: 1
+  isActive: 1
 --- !u!1 &1750315995
 GameObject:
   m_ObjectHideFlags: 0
@@ -24486,7 +24491,7 @@ MonoBehaviour:
   desiredAngle: 45
   cameraHeight: 5
   cameraPosition: {x: 21, y: 6.5, z: -5}
-  cameraRotation: {x: 0.23911765, y: -0.3696438, z: 0.09904577, w: 0.89239913}
+  cameraRotation: {x: 0.2432104, y: -0.33036605, z: 0.08852133, w: 0.9076734}
   targetTransform: {fileID: 2089267154}
 --- !u!1 &1970717898
 GameObject:
@@ -24894,7 +24899,7 @@ MonoBehaviour:
   desiredAngle: 45
   cameraHeight: 5
   cameraPosition: {x: -9, y: 6.5, z: -5}
-  cameraRotation: {x: 0.23911765, y: -0.3696438, z: 0.09904577, w: 0.89239913}
+  cameraRotation: {x: 0.2432104, y: -0.33036605, z: 0.08852133, w: 0.9076734}
   targetTransform: {fileID: 1970717899}
 --- !u!1 &1984316028
 GameObject:
