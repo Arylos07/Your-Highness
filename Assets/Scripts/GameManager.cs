@@ -10,7 +10,9 @@ public class GameManager : MonoSingleton<GameManager>
 {
     //do not keep these public; I'm just being lazy for now
     public int Money = 0;
+    [Obsolete("This is not implemented yet.")]
     public int Reputation = 0; //unused for now. It will be used to determine customer spawn rates and barter chances
+    [Obsolete("This is not implemented yet.")]
     public int Experience = 0;
 
     //This will be replaceed later. I am thinking different lists for different products; flowers in one, edibles in another, etc.
@@ -24,7 +26,12 @@ public class GameManager : MonoSingleton<GameManager>
     public Vector2 StartDate;
     [Tooltip("mm-dd format , e.g. 01-01 for January 1st")]
     public Vector2 EndDate;
-    public int StartYear = 2023; // The year to start the game in, can be changed later
+
+    // The year to start the game in, can be changed later
+    // One thing to look at is that I'm not a fan of games like these starting from year 0/1.
+    // However, I know some would like that.
+    // As a future setting, I will make a setting so that players can choose the start year; either start from year 0/1 or enter a year of their choice and increment that value as needed.
+    public int StartYear = 2023;
 
     [ShowInInspector, ReadOnly]
     public string CurrentDate => Calendar.ToString("MM-dd-yyyy");
