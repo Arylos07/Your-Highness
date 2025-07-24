@@ -4838,8 +4838,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 642ff11764b3cd0458acb979b49c1c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flowerTemplateA: {fileID: 0}
-  flowerTemplateB: {fileID: 0}
+  flowerTemplateA: {fileID: 11400000, guid: ae27005bb27703b42b7d4e5ce8957dd3, type: 2}
+  flowerTemplateB: {fileID: 11400000, guid: 7a37c2fee0ec3404ca44155ac21e0a89, type: 2}
   printPunnett: 0
   printFlowers: 0
 --- !u!4 &373954522
