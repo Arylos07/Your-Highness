@@ -15,6 +15,30 @@ public class Flower
     [SerializeField, TextArea(1, 30)] 
     protected string flavorText; // not public, use Tooltip()
 
+    public Flower()
+    {
+        Name = "Unnamed Flower";
+        Category = Category.Hybrid;
+        Thc = 0;
+        Cbd = 0;
+        Effects = new List<Effects>();
+        Flavors = new List<Flavors>();
+        flavorText = string.Empty;
+    }
+
+    public Flower(
+    string name, Category category, int thc, int cbd,
+    List<Effects> effects, List<Flavors> flavors, string flavorText = "")
+    {
+        Name = name;
+        Category = category;
+        Thc = thc;
+        Cbd = cbd;
+        Effects = new List<Effects>(effects);
+        Flavors = new List<Flavors>(flavors);
+        flavorText = flavorText ?? string.Empty;
+    }
+
     // Constructor: creates a Flower instance from a FlowerTemplate
     public Flower(FlowerTemplate template)
     {
