@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,9 +9,23 @@ public class CameraMovement : MonoBehaviour, InputSystem_Actions.IPlayerActions
     [SerializeField] private float moveSpeed = 5f;
 
     private CameraNode currentNode;
+    [ReadOnly(true)] public string nodeName;
     private Vector3 targetPosition;
     private Quaternion targetRotation;
     private InputSystem_Actions inputActions;
+    public bool IsMoving
+    {
+        get
+        {
+            const float positionThreshold = 0.01f;
+            const float rotationThreshold = 0.01f;
+
+            bool positionMoving = Vector3.Distance(transform.position, targetPosition) > positionThreshold;
+            bool rotationMoving = Quaternion.Angle(transform.rotation, targetRotation) > rotationThreshold;
+
+            return positionMoving || rotationMoving;
+        }
+    }
 
     private void Awake()
     {
@@ -60,6 +75,7 @@ public class CameraMovement : MonoBehaviour, InputSystem_Actions.IPlayerActions
         currentNode = node;
         targetPosition = node.cameraPosition;
         targetRotation = node.cameraRotation;
+        nodeName = node.name; // Update the node name for display or debugging
 
 #if UNITY_EDITOR
         //Selection.objects = new Object[] { node.gameObject };

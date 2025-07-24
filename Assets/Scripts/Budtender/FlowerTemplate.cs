@@ -16,6 +16,7 @@ public class FlowerTemplate : ScriptableObject
     public int thcMin;
     public int thcMax;
     //this is a container that will be replaced later with the strain's final values
+
     public Vector2 thcRange => new Vector2(thcMin, thcMax);
     public int cbdMin;
     public int cbdMax;

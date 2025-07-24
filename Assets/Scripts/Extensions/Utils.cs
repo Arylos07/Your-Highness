@@ -268,7 +268,7 @@ public class Utils
         float distance = 10f)
     {
         // 45 degrees in radians
-        float angle = Mathf.Deg2Rad * 45f;
+        //float angle = Mathf.Deg2Rad * 45f;
         float offset = distance / Mathf.Sqrt(2);
 
         // Calculate camera position
