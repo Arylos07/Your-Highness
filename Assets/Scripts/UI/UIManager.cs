@@ -1,4 +1,5 @@
 using System;
+using UnityCommunity.UnitySingleton;
 using UnityEngine;
 
 public enum UIState
@@ -9,9 +10,8 @@ public enum UIState
     Craft,
     Sell
 }
-public class UIManager : MonoBehaviour
+public class UIManager : MonoSingleton<UIManager>
 {
-    public static UIManager Instance { get; private set; }
     public UIState CurrentState { get; private set; } = UIState.Save;
 
     public event Action<UIState> OnUIStateChanged;

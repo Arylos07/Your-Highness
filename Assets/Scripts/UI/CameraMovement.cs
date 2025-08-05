@@ -76,6 +76,7 @@ public class CameraMovement : MonoBehaviour, InputSystem_Actions.IPlayerActions
         targetPosition = node.cameraPosition;
         targetRotation = node.cameraRotation;
         nodeName = node.name; // Update the node name for display or debugging
+        UIManager.Instance.SetUIState(node.uiState);
 
 #if UNITY_EDITOR
         //Selection.objects = new Object[] { node.gameObject };

@@ -5,6 +5,7 @@ using UnityEditor;
 
 public class CameraNode : MonoBehaviour
 {
+    public UIState uiState;
     public CameraNode Up;
     public CameraNode Down;
     public CameraNode Left;
