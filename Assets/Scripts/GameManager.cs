@@ -34,7 +34,7 @@ public class GameManager : MonoSingleton<GameManager>
     public int StartYear = 2023;
 
     [ShowInInspector, ReadOnly]
-    public string CurrentDate => Calendar.ToString("MM-dd-yyyy");
+    public string CurrentDate => Calendar.ToString("MM/dd/yyyy");
 
     private void Start()
     {
