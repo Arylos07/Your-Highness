@@ -5002,6 +5002,54 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &373954520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 373954522}
+  - component: {fileID: 373954521}
+  m_Layer: 0
+  m_Name: Budtester
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &373954521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373954520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642ff11764b3cd0458acb979b49c1c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flowerTemplateA: {fileID: 11400000, guid: ae27005bb27703b42b7d4e5ce8957dd3, type: 2}
+  flowerTemplateB: {fileID: 11400000, guid: 7a37c2fee0ec3404ca44155ac21e0a89, type: 2}
+  printPunnett: 0
+  printFlowers: 0
+--- !u!4 &373954522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373954520}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.7620565, y: -1.7924782, z: -6.0225787}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &407520607
 GameObject:
   m_ObjectHideFlags: 0
@@ -27713,3 +27761,4 @@ SceneRoots:
   - {fileID: 1688601007}
   - {fileID: 55587378}
   - {fileID: 2049699897}
+  - {fileID: 373954522}
