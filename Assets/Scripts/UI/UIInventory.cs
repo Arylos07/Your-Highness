@@ -51,6 +51,8 @@ public partial class UIInventory : MonoBehaviour
                 slot.text.text = itemSlot.flower.Name;
                 slot.amountOverlay.SetActive(itemSlot.amount > 1);
                 slot.amountText.text = itemSlot.amount.ToString();
+                slot.tooltip.text = itemSlot.ToolTip();
+                slot.tooltip.enabled = true;
             }
             else
             {
@@ -62,6 +64,7 @@ public partial class UIInventory : MonoBehaviour
                 slot.image.sprite = null;
                 slot.text.text = string.Empty;
                 slot.amountOverlay.SetActive(false);
+                slot.tooltip.enabled = false;
             }
         }
     }

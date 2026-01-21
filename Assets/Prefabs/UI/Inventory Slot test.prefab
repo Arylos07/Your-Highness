@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5648734896150255083}
   - component: {fileID: 3618209101937430468}
   - component: {fileID: 688426403552440364}
+  - component: {fileID: 373570396699981689}
   m_Layer: 5
   m_Name: Inventory Slot test
   m_TagString: Untagged
@@ -95,6 +96,21 @@ MonoBehaviour:
   image: {fileID: 3618209101937430468}
   amountOverlay: {fileID: 3091615283613028790}
   amountText: {fileID: 2157555030202722208}
+  tooltip: {fileID: 373570396699981689}
+--- !u!114 &373570396699981689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964452406388924514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0379c074b41b8b4f8ff492f002c407f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tooltip
+  tooltipPrefab: {fileID: 6083397318875341279, guid: b1bcf45d0521fd74ea986f8bd466bd93, type: 3}
+  text: 
 --- !u!1 &2023989017072014115
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +214,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -410,6 +427,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0

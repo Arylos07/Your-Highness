@@ -12,4 +12,5 @@ public class UIInventorySlot : MonoBehaviour
     public Image image;
     public GameObject amountOverlay;
     public TextMeshProUGUI amountText;
+    public Tooltip tooltip;
 }
