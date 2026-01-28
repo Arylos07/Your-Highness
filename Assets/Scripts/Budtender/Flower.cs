@@ -13,7 +13,7 @@ public class Flower
     public List<Flavors> Flavors { get; private set; }
 
     [SerializeField, TextArea(1, 30)] 
-    protected string flavorText; // not public, use Tooltip()
+    public string flavorText; // not public, use Tooltip()
 
     public Flower()
     {
@@ -69,6 +69,12 @@ public class Flower
             list[i] = list[j];
             list[j] = temp;
         }
+    }
+
+    public Seed ConvertToSeed()
+    {
+        Seed seed = new Seed(this);
+        return seed;
     }
 
     // Tooltip: shows values and traits at a glance

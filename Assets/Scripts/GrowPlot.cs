@@ -5,7 +5,7 @@ using System;
 public class GrowPlot : MonoBehaviour
 {
     public GameManager gameManager;
-    public FlowerTemplate template;
+    public Seed template;
     //private Flower Sapling;
     public GrowthStage Stage = GrowthStage.Empty; // Current growth stage of the plant in this plot
     public int HarvestDays = -1; // -1 is unset, meaning this plot cannot be harvested yet.

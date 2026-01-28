@@ -31,7 +31,7 @@ public class FlowerTemplate : ScriptableObject
     {
         get
         {
-            string cbdDisplay = cbdMin == 0 ? $"<{cbdMax}%" : $"{cbdMin}% - {cbdMax}%";
+            string cbdDisplay = cbdMin == 0 ? $"<1%" : $"{cbdMin}% - {cbdMax}%";
             return $"Category: {category.ToCamelCaseString()}\n" +
                    $"THC: {thcMin}% - {thcMax}%\n" +
                    $"CBD: {cbdDisplay}\n" +

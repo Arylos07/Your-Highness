@@ -40,7 +40,7 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     void DestroyToolTip()
     {
-        if (retainTooltip) return;
+        if (retainTooltip) { current.SetActive(false); return; } ;
         // stop any running attempts to show it
         CancelInvoke(nameof(CreateToolTip));
 

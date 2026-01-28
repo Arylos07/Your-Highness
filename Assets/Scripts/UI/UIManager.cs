@@ -22,6 +22,8 @@ public class UIManager : MonoSingleton<UIManager>
     public TextMeshProUGUI GoldText;
     public TextMeshProUGUI DateText;
 
+    public GameObject tooltipPrefab;
+
     public void SetUIState(UIState newState)
     {
         if (CurrentState == newState) return;

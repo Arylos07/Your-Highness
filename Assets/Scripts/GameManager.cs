@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using Sirenix.Serialization;
 using System;
 using Sirenix.OdinInspector;
+using LitJson;
+using System.Collections;
+using System.Text;
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -17,8 +20,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     //This will be replaceed later. I am thinking different lists for different products; flowers in one, edibles in another, etc.
     public List<FlowerSlot> FlowerInventory = new List<FlowerSlot>();
-
-    [OdinSerialize] public Flower testFlower;
+    public List<SeedSlot> SeedInventory = new List<SeedSlot>();
 
     public DateTime Calendar;
     [Tooltip("mm-dd format , e.g. 01-01 for January 1st"),
@@ -42,6 +44,7 @@ public class GameManager : MonoSingleton<GameManager>
             (int)UnityEngine.Random.Range(StartDate.x, EndDate.x + 1), 
             (int)UnityEngine.Random.Range(StartDate.y, EndDate.y + 1));
         Calendar = _date;
+
     }
 
     // Event that is triggered when the day advances
