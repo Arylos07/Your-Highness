@@ -12,6 +12,13 @@ public class BudTester : MonoBehaviour
     public Flower flowerB;
     public bool printFlowers = false;
 
+
+    [Header("Traits Encoding Testing")]
+    public string encodedTraits;
+    public Traits.Category testCategory;
+    public Traits.Effects[] testEffects;
+    public Traits.Flavors[] testFlavors;
+
     [Button("Test Breed Templates")]
     public void BreedTemplates()
     {
@@ -61,5 +68,36 @@ public class BudTester : MonoBehaviour
         {
             Debug.LogWarning("Flowers are not assigned for breeding.");
         }
+    }
+
+    [Button("Generate Flowers From Templates")]
+    public void Generate()
+    {
+        flowerA = new Flower(flowerTemplateA);
+        flowerB = new Flower(flowerTemplateB);
+        Debug.Log($"Generated Flower A:\n{flowerA.Tooltip(true)}");
+        Debug.Log($"Generated Flower B:\n{flowerB.Tooltip(true)}");
+    }
+
+    [Button("Test Encode Traits")]
+    public void TestEncodeTraits()
+    {
+        TraitsContainer container = new TraitsContainer
+        {
+            Category = testCategory,
+            Effects = new System.Collections.Generic.List<Traits.Effects>(testEffects),
+            Flavors = new System.Collections.Generic.List<Traits.Flavors>(testFlavors)
+        };
+        encodedTraits = Traits.EncodeTraits(container);
+        Debug.Log($"Encoded Traits: {encodedTraits}");
+    }
+
+    [Button("Test Decode Traits")]
+    public void TestDecodeTraits()
+    {
+        TraitsContainer container = Traits.DecodeTraits(encodedTraits);
+        testCategory = container.Category;
+        testEffects = container.Effects.ToArray();
+        testFlavors = container.Flavors.ToArray();
     }
 }

@@ -20,13 +20,13 @@ namespace Budtender.Genealogy
                     {
                         Name = parts[0],
                         Description = parts[1],
-                        Stats = parts[2]
+                        Traits = parts[2]
                     },
                     ParentB = new ParentInfo
                     {
                         Name = parts[3],
                         Description = parts[4],
-                        Stats = parts[2] // Assuming stats are the same for both parents in this encoding
+                        Traits = parts[5]
                     },
                     Generation = steps.Count + 1
                 };
@@ -40,7 +40,7 @@ namespace Budtender.Genealogy
             var entries = new List<string>();
             foreach (var step in steps)
             {
-                var entry = $"{step.ParentA.Name}|{step.ParentA.Description}|{step.ParentA.Stats}|{step.ParentB.Name}|{step.ParentB.Description}";
+                var entry = $"{step.ParentA.Name}|{step.ParentA.Description}|{step.ParentA.Traits}|{step.ParentB.Name}|{step.ParentB.Description}";
                 entries.Add(entry);
             }
             return string.Join(";", entries);
@@ -59,6 +59,6 @@ namespace Budtender.Genealogy
         public string Name;
         public string Description;
         //stats, flavors, effects, etc encoded as a string
-        public string Stats;
+        public string Traits;
     }
 }

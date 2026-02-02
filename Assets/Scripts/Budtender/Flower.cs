@@ -96,4 +96,15 @@ public class Flower
 
         return sb.ToString();
     }
+
+    public string EncodeTrats()
+    {
+        TraitsContainer container = new TraitsContainer
+        {
+            Category = this.Category,
+            Effects = this.Effects,
+            Flavors = this.Flavors
+        };
+        return Traits.EncodeTraits(container);
+    }
 }
