@@ -1,5 +1,6 @@
 using UnityEngine;
 using Sirenix.OdinInspector;
+using Budtender;
 
 public class BudTester : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class BudTester : MonoBehaviour
     {
         if (flowerTemplateA != null && flowerTemplateB != null)
         {
-            Flower bredFromTemplates = Budtender.Breed(flowerTemplateA, flowerTemplateB, printPunnett);
+            Flower bredFromTemplates = BreedingEngine.Breed(flowerTemplateA, flowerTemplateB, printPunnett);
             Debug.Log($"Bred Flower from templates:\n{bredFromTemplates.Tooltip(true)}");
         }
         else
@@ -30,7 +31,7 @@ public class BudTester : MonoBehaviour
     {
         if (flowerA != null && flowerB != null)
         {
-            Flower bredFromFlowers = Budtender.Breed(flowerA, flowerB, printFlowers);
+            Flower bredFromFlowers = BreedingEngine.Breed(flowerA, flowerB, printFlowers);
             Debug.Log($"Bred Flower from flowers:\n{bredFromFlowers.Tooltip(true)}");
         }
         else
@@ -44,7 +45,7 @@ public class BudTester : MonoBehaviour
     {
         if (flowerTemplateA != null && flowerTemplateB != null)
         {
-            Flower bredFromTemplates = Budtender.Breed(flowerTemplateA, flowerTemplateB, printPunnett);
+            Flower bredFromTemplates = BreedingEngine.Breed(flowerTemplateA, flowerTemplateB, printPunnett);
             Debug.Log($"Bred Flower from templates:\n{bredFromTemplates.Tooltip(true)}");
         }
         else
@@ -53,7 +54,7 @@ public class BudTester : MonoBehaviour
         }
         if (flowerA != null && flowerB != null)
         {
-            Flower bredFromFlowers = Budtender.Breed(flowerA, flowerB, printFlowers);
+            Flower bredFromFlowers = BreedingEngine.Breed(flowerA, flowerB, printFlowers);
             Debug.Log($"Bred Flower from flowers:\n{bredFromFlowers.Tooltip(true)}");
         }
         else
