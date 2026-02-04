@@ -1,6 +1,6 @@
 using System.Text;
 using UnityEngine;
-using static Traits;
+using Budtender.Traits;
 
 public class Seed : FlowerTemplate
 {

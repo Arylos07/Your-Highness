@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static Traits;
+using Budtender.Traits;
 
 namespace Budtender
 {

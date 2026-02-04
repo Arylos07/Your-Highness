@@ -1,9 +1,9 @@
 using UnityEngine;
-using static Traits; // Assuming Traits is in the same namespace or imported correctly
+using Budtender.Traits;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-[CreateAssetMenu(fileName = "FlowerTemplate", menuName = "Scriptable Objects/FlowerTemplate")]
+[CreateAssetMenu(fileName = "FlowerTemplate", menuName = "Budtender/Flower Template")]
 public class FlowerTemplate : ScriptableObject
 {
     public List<string> names = new List<string>();

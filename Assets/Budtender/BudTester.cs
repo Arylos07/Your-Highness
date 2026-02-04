@@ -1,6 +1,7 @@
 using UnityEngine;
 using Sirenix.OdinInspector;
 using Budtender;
+using Budtender.Traits;
 
 public class BudTester : MonoBehaviour
 {
@@ -15,9 +16,9 @@ public class BudTester : MonoBehaviour
 
     [Header("Traits Encoding Testing")]
     public string encodedTraits;
-    public Traits.Category testCategory;
-    public Traits.Effects[] testEffects;
-    public Traits.Flavors[] testFlavors;
+    public Category testCategory;
+    public Effects[] testEffects;
+    public Flavors[] testFlavors;
 
     [Button("Test Breed Templates")]
     public void BreedTemplates()
@@ -85,8 +86,8 @@ public class BudTester : MonoBehaviour
         TraitsContainer container = new TraitsContainer
         {
             Category = testCategory,
-            Effects = new System.Collections.Generic.List<Traits.Effects>(testEffects),
-            Flavors = new System.Collections.Generic.List<Traits.Flavors>(testFlavors)
+            Effects = new System.Collections.Generic.List<Effects>(testEffects),
+            Flavors = new System.Collections.Generic.List<Flavors>(testFlavors)
         };
         encodedTraits = Traits.EncodeTraits(container);
         Debug.Log($"Encoded Traits: {encodedTraits}");

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
-using static Traits; // Assuming Traits is in the same namespace or imported correctly
+using Budtender.Traits;
 
 public class Flower
 {
