@@ -1,4 +1,5 @@
 // This class contains some helper functions.
+using Mono.CSharp;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,12 +13,13 @@ using UnityEngine.EventSystems;
 using static UnityEngine.EventSystems.EventTrigger;
 
 
+
 /// <summary>
 /// Converts a string property into a Scene property in the inspector
 /// </summary>
 public class SceneAttribute : PropertyAttribute { }
 
-public class Utils
+public static class Utils
 {
     // Mathf.Clamp only works for float and int. we need some more versions:
     public static long Clamp(long value, long min, long max)
@@ -64,14 +66,14 @@ public class Utils
     //    _____        _____
     //   |     |      |     |
     //   |  x==|======|==x  |
-    //   |_____|      |_____|
+    //   |_____|      |_____| 
     //
     //
     // Utils.ClosestDistance(a.collider, b.collider):
     //    _____        _____
     //   |     |      |     |
     //   |     |x====x|     |
-    //   |_____|      |_____|
+    //   |_____|      |_____| 
     //
     public static float ClosestDistance(Collider a, Collider b)
     {
@@ -283,5 +285,37 @@ public class Utils
             objectPosition - cameraPosition, // direction to look
             Vector3.up // "up" vector
         );
+    }
+    public static List<int> NormalizeValues(this List<int> values, int targetSum)
+    {
+        if (values == null || values.Count == 0)
+            return values;
+
+        //get the current sum, calculate the difference, and how much to adjust each value to reach the target.
+        int totalSum = values.Sum();
+        int diff = targetSum - totalSum;
+        int valueAdjust = diff / values.Count;
+
+        //iterate and apply the adjustment (works both up and down)
+        for (int i = 0; i < values.Count; i++)
+        {
+            values[i] += valueAdjust;
+        }
+        return values;
+    }
+
+    public static Dictionary<TKey, int> NormalizeDictionary<TKey>(this Dictionary<TKey, int> dict, int targetSum = 100)
+    {
+        if (dict == null || dict.Count == 0)
+            return dict;
+
+        var keys = dict.Keys.ToList();
+        List<int> values = dict.Values.ToList();
+        values = values.NormalizeValues(targetSum);
+
+        for (int i = 0; i < keys.Count; i++)
+            dict[keys[i]] = values[i];
+
+        return dict;
     }
 }
