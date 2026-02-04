@@ -12,6 +12,7 @@ using System.Text;
 public class GameManager : MonoSingleton<GameManager>
 {
     //do not keep these public; I'm just being lazy for now
+    // I'm also not sure if negative money will be allowed. Think about this.
     public int Money = 0;
     [Obsolete("This is not implemented yet.")]
     public int Reputation = 0; //unused for now. It will be used to determine customer spawn rates and barter chances

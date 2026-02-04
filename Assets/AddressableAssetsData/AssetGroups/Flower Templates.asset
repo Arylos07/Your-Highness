@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Flower Templates
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Flower Templates
+  m_GUID: 89aae7eb85ffaea47b5af115501583ec
+  m_SerializeEntries:
+  - m_GUID: 2958104baef0a994c853a45f877730fd
+    m_Address: Durban Poison
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - FlowerTemplate
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 586e396f6ae2aa949a483f2f729a39c2
+    m_Address: Skunk #1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - FlowerTemplate
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7375d68dde39ff1439c6f471fcac41e3
+    m_Address: OG Kush
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - FlowerTemplate
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a37c2fee0ec3404ca44155ac21e0a89
+    m_Address: Chemdawg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - FlowerTemplate
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ae27005bb27703b42b7d4e5ce8957dd3
+    m_Address: Haze
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - FlowerTemplate
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8294d8113dee9347906ace994742389
+    m_Address: Northern Lights
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - FlowerTemplate
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f39c08d03b4fdd84683981851d1715ce
+    m_Address: Honey bun
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - FlowerTemplate
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f3fbfe55272ffe946b1d039f03818e0d
+    m_Address: Afghan Kush
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - FlowerTemplate
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 8183983fe1311474f9dc03f306159738, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3c053cf23bbf3e44c908cc1c49bd050a, type: 2}
+    - {fileID: 11400000, guid: 8996f2e1cc35fae47b040dad9a61b7a8, type: 2}

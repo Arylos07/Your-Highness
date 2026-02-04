@@ -2,6 +2,7 @@ using System.ComponentModel;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using QFSW.QC;
 
 public class CameraMovement : MonoBehaviour, InputSystem_Actions.IPlayerActions
 {
@@ -58,6 +59,7 @@ public class CameraMovement : MonoBehaviour, InputSystem_Actions.IPlayerActions
     public void OnMove(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
+        if (QuantumConsole.Instance.IsActive) return;
 
         Vector2 input = context.ReadValue<Vector2>();
         if (input.x < -0.5f && currentNode.Left != null)
