@@ -1,7 +1,9 @@
 using Sirenix.OdinInspector;
+using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NpcTemplate", menuName = "Npc Template")]
+[Serializable]
 public class NpcTemplate : ScriptableObject
 {
     //This is such a boilerplate class for expansion later.

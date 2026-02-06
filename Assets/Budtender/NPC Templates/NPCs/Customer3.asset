@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a6474a7901e284c89c77b2d3e14490, type: 3}
+  m_Name: Customer3
+  m_EditorClassIdentifier: Assembly-CSharp::NpcTemplate
+  tasteProfile: {fileID: 11400000, guid: e8daec3bee278d344874c93fc1841c35, type: 2}
+  model: {fileID: 3414311190716070595, guid: 58a11f109e475b64bac4c37f89e96c93, type: 3}
+  faction: {fileID: 0}
+  moneyRange: {x: 5, y: 50}

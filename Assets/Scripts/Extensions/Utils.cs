@@ -356,4 +356,64 @@ public static class Utils
 
         return dict;
     }
+
+    /// <summary>
+    /// Picks a key from a dictionary where int values represent weights.
+    /// If the dictionary is null/empty or all weights are zero/negative this returns default(TKey).
+    /// Works with arbitrary totals (no need to sum to 100).
+    /// </summary>
+    /// I'm not sure if I'm a fan of this function, and I'm tempted to replace the dictionaries with a container.
+    /// We'll see how I feel about this as I expand on it and see how expensive the operation is.
+    public static TKey GetWeightedRandomKey<TKey>(this Dictionary<TKey, int> dict)
+    {
+        if (dict == null || dict.Count == 0)
+            return default;
+
+        int total = dict.Values.Sum();
+        if (total <= 0)
+            return default;
+
+        // roll in [0, total)
+        int roll = UnityEngine.Random.Range(0, total);
+
+        // iterate a snapshot to avoid collection mutation issues and to have stable iteration
+        foreach (var kvp in dict.ToList())
+        {
+            int w = Math.Max(0, kvp.Value);
+            if (w == 0) continue;
+
+            if (roll < w)
+                return kvp.Key;
+
+            roll -= w;
+        }
+
+        // fallback: return the last key (shouldn't normally reach here)
+        return dict.Keys.LastOrDefault();
+    }
+    
+    public static List<TKey>GetWeightedRandomKeys<TKey>(this Dictionary<TKey, int> dict, int count = -1)
+    {
+        List<TKey> results = new List<TKey>();
+        if (dict == null || dict.Count == 0 || count <= 0) return results;
+        return results; //debug for now
+
+        /*
+        List<TKey> results = new List<TKey>();
+        if (dict == null || dict.Count == 0 || count <= 0)
+            return results;
+        // create a copy of the dictionary to avoid modifying the original
+        Dictionary<TKey, int> tempDict = new Dictionary<TKey, int>(dict);
+        for (int i = 0; i < count; i++)
+        {
+            TKey key = tempDict.GetWeightedRandomKey();
+            if (key == null || key.Equals(default(TKey)))
+                break;
+            results.Add(key);
+            // remove the selected key to avoid duplicates
+            tempDict.Remove(key);
+        }
+        return results;
+        */
+    }
 }

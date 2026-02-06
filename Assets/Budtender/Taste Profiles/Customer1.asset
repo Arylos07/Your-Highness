@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48a8d6b7c412c484d98b48f203f5fbc0, type: 3}
-  m_Name: Baradiel
+  m_Name: Customer1
   m_EditorClassIdentifier: Assembly-CSharp::TasteProfile
   serializationData:
     SerializedFormat: 2
@@ -40,19 +40,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
       Data: 1
-    - Name: $v
-      Entry: 3
-      Data: 60
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 7
       Data: 
@@ -61,19 +49,7 @@ MonoBehaviour:
       Data: 2
     - Name: $v
       Entry: 3
-      Data: 30
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 4
-    - Name: $v
-      Entry: 3
-      Data: 10
+      Data: 100
     - Name: 
       Entry: 8
       Data: 
@@ -108,10 +84,10 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 10
+      Data: 0
     - Name: $v
       Entry: 3
-      Data: 40
+      Data: 60
     - Name: 
       Entry: 8
       Data: 
@@ -120,10 +96,10 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 3
+      Data: 10
     - Name: $v
       Entry: 3
-      Data: 60
+      Data: 40
     - Name: 
       Entry: 8
       Data: 
@@ -158,10 +134,10 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 3
+      Data: 0
     - Name: $v
       Entry: 3
-      Data: 50
+      Data: 75
     - Name: 
       Entry: 8
       Data: 
@@ -170,10 +146,10 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 0
+      Data: 4
     - Name: $v
       Entry: 3
-      Data: 50
+      Data: 25
     - Name: 
       Entry: 8
       Data: 
@@ -208,31 +184,7 @@ MonoBehaviour:
       Data: 3
     - Name: 
       Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 1
-    - Name: $v
-      Entry: 3
-      Data: 60
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 6
-    - Name: $v
-      Entry: 3
-      Data: 40
-    - Name: 
-      Entry: 8
-      Data: 
+      Data: 0
     - Name: 
       Entry: 13
       Data: 
@@ -255,5 +207,5 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  thcPreference: {x: 10, y: 25}
-  cbdPreference: {x: 10, y: 25}
+  thcPreference: {x: 10, y: 18}
+  cbdPreference: {x: 0, y: 1}

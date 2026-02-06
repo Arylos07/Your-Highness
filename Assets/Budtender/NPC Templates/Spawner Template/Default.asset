@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35caacce026db8a44873b27f458e0517, type: 3}
+  m_Name: Default
+  m_EditorClassIdentifier: Assembly-CSharp::Budtender.Shop.NpcSpawnerTemplate
+  baseCustomersPerDay: {x: 4, y: 6}
+  randomNpcs:
+  - npcTemplate: {fileID: 11400000, guid: bdc4ccbcc89578046bbb2a73adfbeb09, type: 2}
+    spawnChance: 0.5
+  - npcTemplate: {fileID: 11400000, guid: 52271b9f12dc21f46bbac53092cc8c91, type: 2}
+    spawnChance: 0.25
+  - npcTemplate: {fileID: 11400000, guid: a14bedb036fe6fe419255647335980ee, type: 2}
+    spawnChance: 0.25
+  fixedNpcs:
+  - npcTemplate: {fileID: 11400000, guid: aa5d40692d9a51b46b96e69f653da32b, type: 2}
+    customerIndex: 2
