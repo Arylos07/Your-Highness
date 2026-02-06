@@ -16,6 +16,17 @@ public class TasteProfile : SerializedScriptableObject
     public Dictionary<Effects, int> effectsPreference = new Dictionary<Effects, int>();
     public Dictionary<Flavors, int> flavorsPreference = new Dictionary<Flavors, int>();
 
+    [HideIf("balancedPreferences")]
+    [InfoBox("One or more of the preferences values adds the total up to be inequal to 100. This will skew the math as we want equal distribution across all traits. Run the function below to balance the list of dislikes.", InfoMessageType.Warning)]
+    [Button]
+    public void RecalculatePreferences()
+    {
+        categoryPreference = categoryPreference.NormalizeDictionary(MAX_PREFERENCE_VALUE);
+        effectsPreference = effectsPreference.NormalizeDictionary(MAX_PREFERENCE_VALUE);
+        flavorsPreference = flavorsPreference.NormalizeDictionary(MAX_PREFERENCE_VALUE);
+        ValidatePreferences();
+    }
+
     //maybe have the RNG weighted against this? 
     [MinMaxSlider(0,100, true)]
     public Vector2 thcPreference = new Vector2(10, 25);
@@ -46,24 +57,17 @@ public class TasteProfile : SerializedScriptableObject
     public Dictionary<Effects, int> effectsDislikes = new Dictionary<Effects, int>();
     public Dictionary<Flavors, int> flavorsDislikes = new Dictionary<Flavors, int>();
 
-    [HideIf("balancedPreferences")]
-    [InfoBox("One or more of the preferences values adds the total up to greater than 100. This will skew the math as we want equal distribution across all traits.", InfoMessageType.Warning)]
-    [Button]
-    public void RecalculatePreferences()
-    {
-        categoryPreference = categoryPreference.NormalizeDictionary(MAX_PREFERENCE_VALUE);
-        effectsPreference = effectsPreference.NormalizeDictionary(MAX_PREFERENCE_VALUE);
-        flavorsPreference = flavorsPreference.NormalizeDictionary(MAX_PREFERENCE_VALUE);
-    }
+
 
     [HideIf("balancedDislikes")]
-    [InfoBox("One or more of the Dislike values adds the total up to greater than 100. This will skew the math as we want equal distribution across all traits.", InfoMessageType.Warning)]
+    [InfoBox("One or more of the Dislike values adds the total up to be inequal to 100. This will skew the math as we want equal distribution across all traits. Run the function below to balance the list of dislikes.", InfoMessageType.Warning)]
     [Button]
     void RecalculateDislikes()
     {
         categoryDislikes = categoryDislikes.NormalizeDictionary(MAX_PREFERENCE_VALUE);
         effectsDislikes = effectsDislikes.NormalizeDictionary(MAX_PREFERENCE_VALUE);
         flavorsDislikes = flavorsDislikes.NormalizeDictionary(MAX_PREFERENCE_VALUE);
+        ValidateDislikes();
     }
 
 
@@ -74,12 +78,21 @@ public class TasteProfile : SerializedScriptableObject
 
     private void OnValidate()
     {
-        balancedPreferences = categoryPreference.Values.Sum() == MAX_PREFERENCE_VALUE &&
-                              effectsPreference.Values.Sum() == MAX_PREFERENCE_VALUE &&
-                              flavorsPreference.Values.Sum() == MAX_PREFERENCE_VALUE;
+        ValidatePreferences();
+        ValidateDislikes();
+    }
 
-        balancedDislikes = categoryDislikes.Values.Sum() == MAX_PREFERENCE_VALUE &&
-                            effectsDislikes.Values.Sum() == MAX_PREFERENCE_VALUE &&
-                            flavorsDislikes.Values.Sum() == MAX_PREFERENCE_VALUE;
+    void ValidatePreferences()
+    {
+        balancedPreferences = (categoryPreference.Count != 0 ? categoryPreference.Values.Sum() == MAX_PREFERENCE_VALUE : true) &&
+                      (effectsPreference.Count != 0 ? effectsPreference.Values.Sum() == MAX_PREFERENCE_VALUE : true) &&
+                      (flavorsPreference.Count != 0 ? flavorsPreference.Values.Sum() == MAX_PREFERENCE_VALUE : true);
+    }
+
+    void ValidateDislikes()
+    {
+        balancedDislikes = (categoryDislikes.Count != 0 ? categoryDislikes.Values.Sum() == MAX_PREFERENCE_VALUE : true) &&
+                    (effectsDislikes.Count != 0 ? effectsDislikes.Values.Sum() == MAX_PREFERENCE_VALUE : true) &&
+                    (flavorsDislikes.Count != 0 ? flavorsDislikes.Values.Sum() == MAX_PREFERENCE_VALUE : true);
     }
 }

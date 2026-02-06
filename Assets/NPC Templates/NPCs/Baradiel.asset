@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a6474a7901e284c89c77b2d3e14490, type: 3}
+  m_Name: Baradiel
+  m_EditorClassIdentifier: Assembly-CSharp::NpcTemplate
+  tasteProfile: {fileID: 11400000, guid: 426675d9132b3c043a938b4a92ff4723, type: 2}
+  model: {fileID: 616487237730293205, guid: 956c5a43f5cb45e46a4e012e69fa080f, type: 3}
+  faction: {fileID: 11400000, guid: 0704ee8572786da419934e6a1c331b97, type: 2}
+  moneyRange: {x: 10, y: 100}

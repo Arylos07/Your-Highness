@@ -286,21 +286,59 @@ public static class Utils
             Vector3.up // "up" vector
         );
     }
-    public static List<int> NormalizeValues(this List<int> values, int targetSum)
+    public static List<int> Normalize(this List<int> values, int targetSum)
     {
         if (values == null || values.Count == 0)
             return values;
 
         //get the current sum, calculate the difference, and how much to adjust each value to reach the target.
         int totalSum = values.Sum();
-        int diff = targetSum - totalSum;
-        int valueAdjust = diff / values.Count;
+        float diff = targetSum - totalSum;
+        float valueAdjust = diff / (float)values.Count;
+
+        //Debug.Log($"Normalizing values. Current Sum: {totalSum}, Target Sum: {targetSum}, Diff: {diff}, Value Adjust: {diff} / {values.Count} = {valueAdjust}");
 
         //iterate and apply the adjustment (works both up and down)
         for (int i = 0; i < values.Count; i++)
         {
-            values[i] += valueAdjust;
+            values[i] += Mathf.RoundToInt(valueAdjust);
         }
+
+        //this is stupid, but I think we need one more validation because this works for integers.
+        // After rounding, we may be off by 1 or 2. So we adjust the first value to make it exact.
+        // I hate doing this, but I can't think of a better way right now.
+
+        if(values.Sum() != targetSum)
+        {
+            int finalDiff = targetSum - values.Sum();
+            //Debug.Log($"Post-normalization adjustment needed. Final Diff: {finalDiff}");
+            //we're just going to randomize who gets the final diff for fairness (and laziness)
+            values[UnityEngine.Random.Range(0, values.Count)] += finalDiff;
+        }
+
+        return values;
+    }
+
+    public static List<float> Normalize(this List<float> values, int targetSum)
+    {
+        if (values == null || values.Count == 0)
+            return values;
+
+        //get the current sum, calculate the difference, and how much to adjust each value to reach the target.
+        float totalSum = values.Sum();
+        float diff = targetSum - totalSum;
+        float valueAdjust = diff / (float)values.Count;
+
+        //Debug.Log($"Normalizing values. Current Sum: {totalSum}, Target Sum: {targetSum}, Diff: {diff}, Value Adjust: {diff} / {values.Count} = {valueAdjust}");
+
+        //iterate and apply the adjustment (works both up and down)
+        for (int i = 0; i < values.Count; i++)
+        {
+            values[i] += Mathf.RoundToInt(valueAdjust);
+        }
+
+        // Unlike ints, we don't need to do a final adjustment for floats.
+
         return values;
     }
 
@@ -311,7 +349,7 @@ public static class Utils
 
         var keys = dict.Keys.ToList();
         List<int> values = dict.Values.ToList();
-        values = values.NormalizeValues(targetSum);
+        values = values.Normalize(targetSum);
 
         for (int i = 0; i < keys.Count; i++)
             dict[keys[i]] = values[i];
