@@ -8514,6 +8514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 646172534}
   - component: {fileID: 646172533}
+  - component: {fileID: 646172535}
   m_Layer: 0
   m_Name: NpcSpawner
   m_TagString: Untagged
@@ -8539,10 +8540,12 @@ MonoBehaviour:
     Category: 2
     desiredEffects: 
     desiredFlavors: 
-    unwatedEffects: 
+    unwantedEffects: 
     unwantedFlavors: 
     thcRange: {x: 0, y: 0}
     cbdRange: {x: 0, y: 0}
+    thcMedian: 0
+    cbdMedian: 0
 --- !u!4 &646172534
 Transform:
   m_ObjectHideFlags: 0
@@ -8558,6 +8561,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &646172535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646172532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3e1e981292dc754696ec191fd44ce4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Budtender.Orders.OrderManager
 --- !u!1 &656980129
 GameObject:
   m_ObjectHideFlags: 0
@@ -18862,7 +18877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224130951485110974, guid: 9ed2a051c32b4fe47a5e4fb95c20b03f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000030517578
+      value: -0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 224166536479716514, guid: 9ed2a051c32b4fe47a5e4fb95c20b03f, type: 3}
       propertyPath: m_AnchorMax.y
@@ -28434,8 +28449,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1088285421}
   m_HandleRect: {fileID: 1088285420}
   m_Direction: 0
-  m_Value: 1
-  m_Size: 0.99999994
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

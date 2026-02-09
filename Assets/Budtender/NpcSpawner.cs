@@ -24,33 +24,11 @@ namespace Budtender.Shop
             order = new Order(defaultTasteProfile);
         }
 
-        /*
-         * After testing this, it does accurately represent the random chances in batches of 100. 
-         * So I think this is the algorithm to go. Checking the profiler, I don't see many issues 
-         * in terms of expense, so I think we can work with this. A part of me still wants to use
-         * lists instead, but I think the unique key aspect of the dictionary is important, 
-         * and I don't want to have to worry about validating that myself. God forbid I make an NPC
-         * that has multiple of the same preferences, or players can breed a flower with 2 Happy traits.
-         */
-
+        //this function is the same as DebugOrder, but it uses inventory summary.
         [Button]
-        void Brute()
+        void DebugWeightedOrder()
         {
-            //we're going to brute force RNG rolls here to find patterns.
-            Dictionary<Category, int> categoryTest = new Dictionary<Category, int>(defaultTasteProfile.categoryPreference);
-            List<Category> categories = new List<Category>();
-            int testTarget = 100;
-            //get 100 categories.
-            for (int i = 0; i < testTarget; i++)
-            {
-                categories.Add(categoryTest.GetWeightedRandomKey());
-            }
-
-            foreach(Category cat in categories)
-            {
-                int count = categories.FindAll(x => x == cat).Count;
-                Debug.Log($"{cat.ToString()}: {count}");
-            }
+            order = new Order(defaultTasteProfile, OrderManager.Instance.inventorySummary);
         }
     }
 }

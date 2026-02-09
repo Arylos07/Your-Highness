@@ -392,19 +392,15 @@ public static class Utils
         return dict.Keys.LastOrDefault();
     }
     
-    public static List<TKey>GetWeightedRandomKeys<TKey>(this Dictionary<TKey, int> dict, int count = -1)
+    public static List<TKey>GetWeightedRandomKeys<TKey>(this Dictionary<TKey, int> dict, int limit = -1)
     {
         List<TKey> results = new List<TKey>();
-        if (dict == null || dict.Count == 0 || count <= 0) return results;
-        return results; //debug for now
-
-        /*
-        List<TKey> results = new List<TKey>();
-        if (dict == null || dict.Count == 0 || count <= 0)
+        if (dict == null || dict.Count == 0)
             return results;
         // create a copy of the dictionary to avoid modifying the original
         Dictionary<TKey, int> tempDict = new Dictionary<TKey, int>(dict);
-        for (int i = 0; i < count; i++)
+        if(limit == -1) limit = dict.Count;
+        for (int i = 0; i < limit; i++)
         {
             TKey key = tempDict.GetWeightedRandomKey();
             if (key == null || key.Equals(default(TKey)))
@@ -414,6 +410,5 @@ public static class Utils
             tempDict.Remove(key);
         }
         return results;
-        */
     }
 }
