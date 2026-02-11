@@ -1,7 +1,7 @@
 using UnityEngine;
 using Sirenix.OdinInspector;
 using System;
-
+using Budtender;
 public class GrowPlot : MonoBehaviour
 {
     public GameManager gameManager;

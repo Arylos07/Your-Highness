@@ -2,11 +2,12 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 using Sirenix.Serialization;
+using Budtender;
 
 public class Spawner : MonoBehaviour
 {
     public List<FlowerTemplate> flowerTemplates; // List of flower templates to spawn from
-    Flower newFlower;
+    Product newFlower;
     public bool oncePerDay;
     [SerializeField] private bool isActive = true; // Whether the spawner is active
 
@@ -35,7 +36,7 @@ public class Spawner : MonoBehaviour
             FlowerTemplate randomTemplate = flowerTemplates[Random.Range(0, flowerTemplates.Count)];
 
             // Instantiate a new Flower from the template
-            newFlower = new Flower(randomTemplate);
+            newFlower = new Product(randomTemplate);
 
             // Create a FlowerSlot with the new Flower
             FlowerSlot newSlot = new FlowerSlot(newFlower, 1);

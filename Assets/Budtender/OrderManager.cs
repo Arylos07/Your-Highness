@@ -15,7 +15,7 @@ namespace Budtender.Orders
         public InventorySummary inventorySummary;
 
         //this function doesn't handle different products yet, but we'll get there
-        [Button]
+        //[Button]
         public InventorySummary SummarizeInventory()
         {
             if(GameManager.Instance.FlowerInventory.Count == 0)

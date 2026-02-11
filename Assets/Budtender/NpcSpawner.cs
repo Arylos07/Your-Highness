@@ -17,7 +17,7 @@ namespace Budtender.Shop
 
         public NpcSpawnerTemplate template; //debug for now;
         public TasteProfile defaultTasteProfile; //debug for now;
-        public Order order;
+        //public Order order;
 
         [SerializeField]
         public List<Customer> Customers = new List<Customer>();
@@ -40,6 +40,7 @@ namespace Budtender.Shop
             Customers = template.GenerateCustomers(summary); //for now
         }
 
+        /*
         [Button]
         void DebugOrder()
         {
@@ -52,5 +53,6 @@ namespace Budtender.Shop
         {
             order = new Order(defaultTasteProfile, OrderManager.Instance.inventorySummary);
         }
+        */
     }
 }

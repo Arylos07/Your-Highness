@@ -46,7 +46,7 @@ namespace Budtender.Templates
         }
 
         // Async/await version - caller can await this to get a ready Flower instance.
-        public static async Task<Flower> GenerateRandomFlowerAsync(string address, bool unloadWhenDone = true)
+        public static async Task<Product> GenerateRandomFlowerAsync(string address, bool unloadWhenDone = true)
         {
             var handle = Addressables.LoadAssetAsync<FlowerTemplate>(address);
 
@@ -63,7 +63,7 @@ namespace Budtender.Templates
 
             if (handle.Status == AsyncOperationStatus.Succeeded && template != null)
             {
-                var flower = new Flower(template);
+                var flower = new Product(template);
                 if (unloadWhenDone) UnloadTemplate(template);
                 return flower;
             }
@@ -72,7 +72,7 @@ namespace Budtender.Templates
             return null;
         }
 
-        public static async Task<Flower> GenerateRandomFlowerAsync(bool unloadWhenDone = true)
+        public static async Task<Product> GenerateRandomFlowerAsync(bool unloadWhenDone = true)
         {
             // Start loading the resource locations for the label
             AsyncOperationHandle<IList<IResourceLocation>> handle = Addressables.LoadResourceLocationsAsync(flowerTemplateLabel.labelString);

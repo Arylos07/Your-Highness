@@ -58,7 +58,7 @@ namespace Budtender.Traits
         Vanilla
     }
 
-    public static class Traits
+    public static class TraitsManager
     {
 
         public static string EncodeTraits(TraitsContainer container)

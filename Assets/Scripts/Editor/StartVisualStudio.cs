@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class StartVisualStudio : MonoBehaviour
 {
-    [MenuItem("Tools/Open Visual Studio", false, 0)]
+    //this function is a little broken now. The product name is "Your Highness", while the solution is "Your-Highness.sln". I need to find a better way for this tool to work.
+    //[MenuItem("Tools/Open Visual Studio", false, 0)]
     public static void OpenVisualStudio()
     {
         //if (VSOpen) return;
@@ -11,6 +12,7 @@ public class StartVisualStudio : MonoBehaviour
         string path = Application.dataPath;
         path = path.Replace("/Assets", string.Empty);
         path += "/" + Application.productName + ".sln";
+        //Debug.Log(path);
         System.Diagnostics.Process.Start(path);
     }
 

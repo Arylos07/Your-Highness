@@ -3,15 +3,16 @@ using System.Text;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
+using Budtender;
 
 [Serializable]
 public struct FlowerSlot
 {
-    [OdinSerialize] public Flower flower;
+    [OdinSerialize] public Product flower;
     [OdinSerialize] public int amount;
 
     // Constructor
-    public FlowerSlot(Flower flower, int amount = 1)
+    public FlowerSlot(Product flower, int amount = 1)
     {
         this.flower = flower;
         this.amount = amount;

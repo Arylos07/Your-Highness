@@ -13,9 +13,9 @@ namespace Budtender
         /// Breeds two FlowerTemplates, simulating a punnett square for realism.
         /// Picks one of four children and returns the resulting Flower. Optional: print all children and the result.
         /// </summary>
-        public static Flower Breed(FlowerTemplate a, FlowerTemplate b, bool printPunnett = false)
+        public static Product Breed(FlowerTemplate a, FlowerTemplate b, bool printPunnett = false)
         {
-            var children = new List<Flower>();
+            var children = new List<Product>();
             for (int i = 0; i < 4; i++)
             {
                 // For punnett square, "cross" with slight variation each time.
@@ -53,7 +53,7 @@ namespace Budtender
         /// <summary>
         /// Breeds two Flowers. Returns the resulting Flower. Optional: print the result.
         /// </summary>
-        public static Flower Breed(Flower a, Flower b, bool print = false)
+        public static Product Breed(Product a, Product b, bool print = false)
         {
             var child = MixTraits(
                 a.Name, a.Category, a.Thc, a.Cbd, a.Effects, a.Flavors, a.Tooltip(),
@@ -67,24 +67,24 @@ namespace Budtender
         /// <summary>
         /// Breeds a Flower and a FlowerTemplate. Returns the resulting Flower. Optional: print the result.
         /// </summary>
-        public static Flower Breed(Flower flower, FlowerTemplate template, bool print = false)
+        public static Product Breed(Product flower, FlowerTemplate template, bool print = false)
         {
             // Make a "virtual" Flower from the template with random values within range
-            var temp = new Flower(template);
+            var temp = new Product(template);
             var child = Breed(flower, temp, print);
             return child;
         }
         /// <summary>
         /// Breeds a FlowerTemplate and a Flower. Returns the resulting Flower. Optional: print the result.
         /// </summary>
-        public static Flower Breed(FlowerTemplate template, Flower flower, bool print = false)
+        public static Product Breed(FlowerTemplate template, Product flower, bool print = false)
         {
             return Breed(flower, template, print);
         }
 
         // --- CORE MIXING LOGIC ---
 
-        private static Flower MixTraits(
+        private static Product MixTraits(
             string nameA, Category catA, int thcA, int cbdA, List<Effects> effA, List<Flavors> flavA, string flavorTextA,
             string nameB, Category catB, int thcB, int cbdB, List<Effects> effB, List<Flavors> flavB, string flavorTextB)
         {
@@ -110,7 +110,7 @@ namespace Budtender
                                  : $"{nameA} crossed with {nameB}.";
 
             // Use direct constructor (assumes you added this to Flower)
-            return new Flower(childName, childCategory, thc, cbd, effects, flavors, flavorText);
+            return new Product(childName, childCategory, thc, cbd, effects, flavors, flavorText);
         }
 
         // --- TRAIT CROSS HELPERS ---

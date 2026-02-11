@@ -4,6 +4,7 @@ using System.IO;
 using System.Threading.Tasks; // Add this for Task support
 using UnityEngine;
 using Budtender.Orders;
+using Budtender;
 
 namespace DebugTools.Commands
 {
@@ -12,7 +13,7 @@ namespace DebugTools.Commands
         [Command]
         public static async Task AddRandomFlower(string templateName, int amount)
         {
-            Flower flower = await TemplateManager.GenerateRandomFlowerAsync(templateName);
+            Product flower = await TemplateManager.GenerateRandomFlowerAsync(templateName);
             GameManager.Instance.FlowerInventory.Add(new FlowerSlot(flower, amount));
             Debug.Log($"Added flower: {amount}x {flower.Name}");
         }
@@ -22,7 +23,7 @@ namespace DebugTools.Commands
         {
             for (int i = 0; i < flowerTypes; i++)
             {
-                Flower flower = await TemplateManager.GenerateRandomFlowerAsync();
+                Product flower = await TemplateManager.GenerateRandomFlowerAsync();
                 int amount = Random.Range(numMin, numMax + 1);
                 GameManager.Instance.FlowerInventory.Add(new FlowerSlot(flower, amount));
                 Debug.Log($"Added flower: {amount}x {flower.Name}");
@@ -36,7 +37,7 @@ namespace DebugTools.Commands
             int flowerSlots = Random.Range(5, 10);
             for (int i = 0; i < flowerSlots; i++)
             {
-                Flower flower = await TemplateManager.GenerateRandomFlowerAsync();
+                Product flower = await TemplateManager.GenerateRandomFlowerAsync();
                 int amount = Random.Range(1, flowers + 1);
                 GameManager.Instance.FlowerInventory.Add(new FlowerSlot(flower, amount));
                 Debug.Log($"Added flower: {amount}x {flower.Name}");

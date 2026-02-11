@@ -1,11 +1,11 @@
 using UnityEngine;
 using Sirenix.Serialization;
 using System;
-
+using Budtender;
 public class PlotSpawner : MonoBehaviour
 {
     public FlowerTemplate flowerTemplate; // Single flower template to spawn from
-    private Flower newFlower;
+    private Product newFlower;
     public bool oncePerDay;
     [SerializeField] public bool isActive = true; // Whether the spawner is active
 
@@ -34,7 +34,7 @@ public class PlotSpawner : MonoBehaviour
         if (flowerTemplate != null)
         {
             // Instantiate a new Flower from the template
-            newFlower = new Flower(flowerTemplate);
+            newFlower = new Product(flowerTemplate);
 
             // Create a FlowerSlot with the new Flower
             FlowerSlot newSlot = new FlowerSlot(newFlower, 1);

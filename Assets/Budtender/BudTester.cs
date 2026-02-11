@@ -9,8 +9,8 @@ public class BudTester : MonoBehaviour
     public FlowerTemplate flowerTemplateB;
     public bool printPunnett = false;
 
-    public Flower flowerA;
-    public Flower flowerB;
+    public Product flowerA;
+    public Product flowerB;
     public bool printFlowers = false;
 
 
@@ -25,7 +25,7 @@ public class BudTester : MonoBehaviour
     {
         if (flowerTemplateA != null && flowerTemplateB != null)
         {
-            Flower bredFromTemplates = BreedingEngine.Breed(flowerTemplateA, flowerTemplateB, printPunnett);
+            Product bredFromTemplates = BreedingEngine.Breed(flowerTemplateA, flowerTemplateB, printPunnett);
             Debug.Log($"Bred Flower from templates:\n{bredFromTemplates.Tooltip(true)}");
         }
         else
@@ -39,7 +39,7 @@ public class BudTester : MonoBehaviour
     {
         if (flowerA != null && flowerB != null)
         {
-            Flower bredFromFlowers = BreedingEngine.Breed(flowerA, flowerB, printFlowers);
+            Product bredFromFlowers = BreedingEngine.Breed(flowerA, flowerB, printFlowers);
             Debug.Log($"Bred Flower from flowers:\n{bredFromFlowers.Tooltip(true)}");
         }
         else
@@ -53,7 +53,7 @@ public class BudTester : MonoBehaviour
     {
         if (flowerTemplateA != null && flowerTemplateB != null)
         {
-            Flower bredFromTemplates = BreedingEngine.Breed(flowerTemplateA, flowerTemplateB, printPunnett);
+            Product bredFromTemplates = BreedingEngine.Breed(flowerTemplateA, flowerTemplateB, printPunnett);
             Debug.Log($"Bred Flower from templates:\n{bredFromTemplates.Tooltip(true)}");
         }
         else
@@ -62,7 +62,7 @@ public class BudTester : MonoBehaviour
         }
         if (flowerA != null && flowerB != null)
         {
-            Flower bredFromFlowers = BreedingEngine.Breed(flowerA, flowerB, printFlowers);
+            Product bredFromFlowers = BreedingEngine.Breed(flowerA, flowerB, printFlowers);
             Debug.Log($"Bred Flower from flowers:\n{bredFromFlowers.Tooltip(true)}");
         }
         else
@@ -74,8 +74,8 @@ public class BudTester : MonoBehaviour
     [Button("Generate Flowers From Templates")]
     public void Generate()
     {
-        flowerA = new Flower(flowerTemplateA);
-        flowerB = new Flower(flowerTemplateB);
+        flowerA = new Product(flowerTemplateA);
+        flowerB = new Product(flowerTemplateB);
         Debug.Log($"Generated Flower A:\n{flowerA.Tooltip(true)}");
         Debug.Log($"Generated Flower B:\n{flowerB.Tooltip(true)}");
     }
@@ -89,14 +89,14 @@ public class BudTester : MonoBehaviour
             Effects = new System.Collections.Generic.List<Effects>(testEffects),
             Flavors = new System.Collections.Generic.List<Flavors>(testFlavors)
         };
-        encodedTraits = Traits.EncodeTraits(container);
+        encodedTraits = TraitsManager.EncodeTraits(container);
         Debug.Log($"Encoded Traits: {encodedTraits}");
     }
 
     [Button("Test Decode Traits")]
     public void TestDecodeTraits()
     {
-        TraitsContainer container = Traits.DecodeTraits(encodedTraits);
+        TraitsContainer container = TraitsManager.DecodeTraits(encodedTraits);
         testCategory = container.Category;
         testEffects = container.Effects.ToArray();
         testFlavors = container.Flavors.ToArray();
