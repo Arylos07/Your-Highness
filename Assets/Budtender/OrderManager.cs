@@ -18,6 +18,13 @@ namespace Budtender.Orders
         [Button]
         public InventorySummary SummarizeInventory()
         {
+            if(GameManager.Instance.FlowerInventory.Count == 0)
+            {
+                Debug.LogWarning("No products in inventory! No summary was generated!");
+                //this is dangerous, returning null, but we need to tell whatever was wanting a summary that the player has no inventory.
+                return null; 
+            }
+
             InventorySummary summary = new InventorySummary();
 
             List<FlowerSlot> flowers = new List<FlowerSlot>(GameManager.Instance.FlowerInventory);

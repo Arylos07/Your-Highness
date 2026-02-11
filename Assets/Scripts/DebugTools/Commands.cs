@@ -3,6 +3,7 @@ using QFSW.QC;
 using System.IO;
 using System.Threading.Tasks; // Add this for Task support
 using UnityEngine;
+using Budtender.Orders;
 
 namespace DebugTools.Commands
 {
@@ -49,6 +50,13 @@ namespace DebugTools.Commands
             //creature comfort for logging
             string _mod = amount > 0 ? "Added" : "Removed";
             Debug.Log($"{_mod} {amount}");
+        }
+
+        [Command]
+        public static void GetInventorySummary()
+        {
+            InventorySummary summary = OrderManager.Instance.SummarizeInventory();
+            Debug.Log(summary.ToString());
         }
     }
 }

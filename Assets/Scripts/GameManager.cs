@@ -59,7 +59,8 @@ public class GameManager : MonoSingleton<GameManager>
         Calendar = Calendar.AddDays(1);
 
         int listenerCount = OnDayAdvanced?.GetInvocationList().Length ?? 0;
-        Debug.Log($"Day advanced to {CurrentDate}; Notified {listenerCount} listeners.");
+        Debug.Log($"Day advanced {Calendar.AddDays(-1).ToString("MM/dd/yyyy")} --> {CurrentDate}; Notified {listenerCount} listeners.");
+
 
         OnDayAdvanced?.Invoke(Calendar);
     }

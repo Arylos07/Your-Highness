@@ -14,5 +14,5 @@ public class NpcTemplate : ScriptableObject
 
     [InfoBox("In the future, this may become a percentage, so the NPC spawns with a percentage of what the player owns or something. This way, the play isn't dealing with lowballers in the mid/late game.")]
     [MinMaxSlider(0, 100, true)]
-    public Vector2 moneyRange = new Vector2(10, 100);
+    public Vector2Int moneyRange = new Vector2Int(10, 100);
 }
