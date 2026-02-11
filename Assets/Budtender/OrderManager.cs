@@ -18,7 +18,7 @@ namespace Budtender.Orders
         //[Button]
         public InventorySummary SummarizeInventory()
         {
-            if(GameManager.Instance.FlowerInventory.Count == 0)
+            if(GameManager.Instance.ProductInventory.Count == 0)
             {
                 Debug.LogWarning("No products in inventory! No summary was generated!");
                 //this is dangerous, returning null, but we need to tell whatever was wanting a summary that the player has no inventory.
@@ -27,7 +27,7 @@ namespace Budtender.Orders
 
             InventorySummary summary = new InventorySummary();
 
-            List<FlowerSlot> flowers = new List<FlowerSlot>(GameManager.Instance.FlowerInventory);
+            List<ProductSlot> flowers = new List<ProductSlot>(GameManager.Instance.ProductInventory);
 
             //this will be used so we don't spawn more customers than the player can handle. While they can turn away customers, I'd rather it not be common.
             summary.productCount = flowers.Count;

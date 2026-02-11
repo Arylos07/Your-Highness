@@ -19,9 +19,9 @@ public class GameManager : MonoSingleton<GameManager>
     [Obsolete("This is not implemented yet.")]
     public int Experience = 0;
 
-    //This will be replaceed later. I am thinking different lists for different products; flowers in one, edibles in another, etc.
-    public List<FlowerSlot> FlowerInventory = new List<FlowerSlot>();
-    public List<SeedSlot> SeedInventory = new List<SeedSlot>();
+    //products and seeds don't serialize as slots well. So we have to do this.
+    [HideInInspector] public List<ProductSlot> ProductInventory = new List<ProductSlot>();
+    [HideInInspector] public List<SeedSlot> SeedInventory = new List<SeedSlot>();
 
     public DateTime Calendar;
     [Tooltip("mm-dd format , e.g. 01-01 for January 1st"),

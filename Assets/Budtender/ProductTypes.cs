@@ -11,7 +11,7 @@ namespace Budtender
         Edible,
         Concentrate,
         Topical,
-        PreRoll,
+        Preroll,
         Tincture,
         Capsule,
         Beverage

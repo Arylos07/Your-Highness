@@ -23,14 +23,14 @@ public partial class UIInventory : MonoBehaviour
     void Update()
     {
         // instantiate/destroy enough slots
-        UIUtils.BalancePrefabs(slotPrefab.gameObject, gameManager.FlowerInventory.Count, content);
+        UIUtils.BalancePrefabs(slotPrefab.gameObject, gameManager.ProductInventory.Count, content);
 
         // refresh all items
-        for (int i = 0; i < gameManager.FlowerInventory.Count; ++i)
+        for (int i = 0; i < gameManager.ProductInventory.Count; ++i)
         {
             UIInventorySlot slot = content.GetChild(i).GetComponent<UIInventorySlot>();
             //slot.dragAndDropable.name = i.ToString(); // drag and drop index
-            FlowerSlot itemSlot = gameManager.FlowerInventory[i];
+            ProductSlot itemSlot = gameManager.ProductInventory[i];
 
             if (itemSlot.amount > 0)
             {

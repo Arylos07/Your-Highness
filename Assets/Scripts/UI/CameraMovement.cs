@@ -59,6 +59,7 @@ public class CameraMovement : MonoBehaviour, InputSystem_Actions.IPlayerActions
     public void OnMove(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
+        //disable player movement if the console is open. otherwise, we move as we type
         if (QuantumConsole.Instance.IsActive) return;
 
         Vector2 input = context.ReadValue<Vector2>();

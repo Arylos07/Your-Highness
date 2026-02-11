@@ -37,10 +37,10 @@ public class PlotSpawner : MonoBehaviour
             newFlower = new Product(flowerTemplate);
 
             // Create a FlowerSlot with the new Flower
-            FlowerSlot newSlot = new FlowerSlot(newFlower, 1);
+            ProductSlot newSlot = new ProductSlot(newFlower, 1);
 
             // Add the FlowerSlot to the GameManager's FlowerInventory
-            GameManager.Instance.FlowerInventory.Add(newSlot);
+            GameManager.Instance.ProductInventory.Add(newSlot);
 
             Debug.Log($"Added {newFlower.Name} to the GameManager's inventory.");
 

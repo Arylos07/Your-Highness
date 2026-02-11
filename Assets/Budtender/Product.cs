@@ -103,6 +103,8 @@ namespace Budtender
             string cbdDisplay = Cbd == 0 ? "<1%" : $"{Cbd}%";
             var sb = new StringBuilder();
             sb.AppendLine($"Name: {Name}");
+            //camelcase is not needed here, thankfully
+            sb.AppendLine($"Type: {ProductType}");
             sb.AppendLine($"Category: {Category.ToCamelCaseString()}");
             sb.AppendLine($"THC: {Thc}%");
             sb.AppendLine($"CBD: {cbdDisplay}");
@@ -127,5 +129,11 @@ namespace Budtender
             };
             return TraitsManager.EncodeTraits(container);
         }
+
+        //Doing this because we may want to make this a function instead of a set.
+        public void ChangeProductType(ProductType newType)
+        {
+            ProductType = newType;
+        } 
     }
 }

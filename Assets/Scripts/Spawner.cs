@@ -39,10 +39,10 @@ public class Spawner : MonoBehaviour
             newFlower = new Product(randomTemplate);
 
             // Create a FlowerSlot with the new Flower
-            FlowerSlot newSlot = new FlowerSlot(newFlower, 1);
+            ProductSlot newSlot = new ProductSlot(newFlower, 1);
 
             // Add the FlowerSlot to the GameManager's FlowerInventory
-            GameManager.Instance.FlowerInventory.Add(newSlot);
+            GameManager.Instance.ProductInventory.Add(newSlot);
 
             if (oncePerDay) isActive = false;
 

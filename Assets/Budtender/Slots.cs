@@ -6,13 +6,13 @@ using Sirenix.Serialization;
 using Budtender;
 
 [Serializable]
-public struct FlowerSlot
+public struct ProductSlot
 {
     [OdinSerialize] public Product flower;
     [OdinSerialize] public int amount;
 
     // Constructor
-    public FlowerSlot(Product flower, int amount = 1)
+    public ProductSlot(Product flower, int amount = 1)
     {
         this.flower = flower;
         this.amount = amount;
@@ -46,6 +46,7 @@ public struct FlowerSlot
     }
 }
 
+[Serializable]
 public struct SeedSlot
 {
     [OdinSerialize] public Seed seed;
