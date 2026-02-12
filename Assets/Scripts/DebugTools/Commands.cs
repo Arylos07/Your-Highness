@@ -76,6 +76,24 @@ namespace DebugTools.Commands
             GameManager.Instance.ProductInventory.Add(new ProductSlot(product, amount));
         }
 
+        [Command]
+        public static void ClearInventory(bool removeSeeds = false)
+        {
+            int products = GameManager.Instance.ProductInventory.Count;
+            int seeds = GameManager.Instance.SeedInventory.Count;
+
+            GameManager.Instance.ProductInventory = new System.Collections.Generic.List<ProductSlot>();
+
+            Debug.Log($"Removed {products} products from inventory.");
+
+            if (removeSeeds)
+            {
+                GameManager.Instance.SeedInventory = new System.Collections.Generic.List<SeedSlot>();
+
+                Debug.Log($"Removed {seeds} seeds from inventory.");
+            }
+        }
+
         // Dumps a quick text snapshot of the player's flower/product inventory.
         // Usage from QC console:
         //  - DumpInventory()
