@@ -40,7 +40,7 @@ namespace Budtender.Shop
             return Random.Range(baseCustomersPerDay.x, baseCustomersPerDay.y + 1);
         }
 
-        public List<Customer> GenerateCustomers(InventorySummary summary)
+        public List<Customer> GenerateCustomers()
         {
             int customerCount = GetCustomerCount();
 
@@ -68,7 +68,7 @@ namespace Budtender.Shop
 
                         if (customers[target] == null)
                         {
-                            customers[target] = new Customer(fixedSpawn.npcTemplate, summary);
+                            customers[target] = new Customer(fixedSpawn.npcTemplate);
                         }
                         else
                         {
@@ -96,7 +96,7 @@ namespace Budtender.Shop
 
                             if (found != -1)
                             {
-                                customers[found] = new Customer(fixedSpawn.npcTemplate, summary);
+                                customers[found] = new Customer(fixedSpawn.npcTemplate);
                             }
                             // if no free slot found, skip this fixed spawn (too many fixeds for day)
                         }
@@ -126,7 +126,7 @@ namespace Budtender.Shop
 
                         if (found != -1)
                         {
-                            customers[found] = new Customer(fixedSpawn.npcTemplate, summary);
+                            customers[found] = new Customer(fixedSpawn.npcTemplate);
                         }
                         // otherwise skip if no free slot left
                     }
@@ -178,7 +178,7 @@ namespace Budtender.Shop
                         }
                     }
 
-                    customers[i] = new Customer(selectedTemplate, summary);
+                    customers[i] = new Customer(selectedTemplate);
                 }
             }
             else

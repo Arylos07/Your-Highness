@@ -5,6 +5,7 @@ using System.Threading.Tasks; // Add this for Task support
 using UnityEngine;
 using Budtender.Orders;
 using Budtender;
+using Budtender.Shop;
 using System;
 using System.Text;
 
@@ -156,6 +157,55 @@ namespace DebugTools.Commands
                     Debug.LogError($"Failed to write inventory dump to '{path}': {ex.Message}");
                 }
             }
+        }
+
+        [Command]
+        public static void ServeCustomer(int productSlotIndex)
+        {
+            NpcSpawner spawner = UnityEngine.Object.FindAnyObjectByType<NpcSpawner>();
+            if (spawner == null)
+            {
+                Debug.LogError("No NpcSpawner found in the scene.");
+                return;
+            }
+            //the other calls to this function should use 0-based indexing, but this QC command is more user-friendly with 1-based indexing, so we adjust for that here.
+            SaleResult result = spawner.ServeCustomer(productSlotIndex + 1);
+            if (result != null)
+            {
+                Debug.Log(result.ToString());
+            }
+        }
+
+        [Command]
+        public static void TurnAwayCustomer()
+        {
+            NpcSpawner spawner = UnityEngine.Object.FindAnyObjectByType<NpcSpawner>();
+            if (spawner == null)
+            {
+                Debug.LogError("No NpcSpawner found in the scene.");
+                return;
+            }
+
+            spawner.TurnAwayCustomer();
+        }
+
+        [Command]
+        public static void ShowCurrentOrder()
+        {
+            NpcSpawner spawner = UnityEngine.Object.FindAnyObjectByType<NpcSpawner>();
+            if (spawner == null)
+            {
+                Debug.LogError("No NpcSpawner found in the scene.");
+                return;
+            }
+
+            if (!spawner.IsSellingDay)
+            {
+                Debug.Log("No selling day in progress.");
+                return;
+            }
+
+            Debug.Log($"Customer #{spawner.CurrentCustomerIndex + 1}/{spawner.Customers.Count}\n{spawner.CurrentOrderSummary}");
         }
     }
 }
